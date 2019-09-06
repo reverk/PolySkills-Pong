@@ -8,6 +8,15 @@
 	clear: both;
 }
 
+body {
+	background-color: lightblue;
+}
+
+canvas {
+	background: url(Images/Map.png);
+	cursor: pointer;
+}
+
 .header {
 	overflow: hidden;
 	width: 100%;
@@ -22,15 +31,9 @@
 	margin-left: 25px;
 }
 
-body {
-	background-color: lightblue;
-}
-
-canvas {
+.desc {
 	text-align: center;
-	background: url(Images/Map.png);
-	margin: auto;
-	display: block;
+	font-size: 20px;
 }
 
 .game {
@@ -40,7 +43,7 @@ canvas {
     padding-top: 10px;
 	padding-bottom: 10px;
 	
-	margin-bottom: 250px;
+	margin-bottom: 150px;
 }
 
 .restartbtn {
@@ -53,6 +56,28 @@ canvas {
 	margin: 0 auto;
 	display: block;
 	
+}
+
+.col13 {
+	box-sizing: border-box;
+	width: 30%;
+	padding: 5px;
+	float: left;
+	text-align: center;
+	margin: 0 auto;
+	display: table;
+}
+
+.center {
+	width: 40%;
+}
+
+.verticallogo {
+	margin: auto;
+	display: table;
+	text-align: center;
+	position: relative;
+	top: 260px;
 }
 
 .col {
@@ -83,5 +108,13 @@ canvas {
 
 	.col:last-child {
 		border-bottom: none;
+	}
+
+	.col13 {
+		width: 100%;
+	}
+
+	.verticallogo {
+		top: 0px;
 	}
 }

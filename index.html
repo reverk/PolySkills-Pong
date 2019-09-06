@@ -9,25 +9,38 @@
 </head>
 
 <body>
-	<div class="game">
-		<canvas width="500" height="800" id="myCanvas" onclick="run();"></canvas>
-		<br>
-		<button class="restartbtn" onclick="restart();">Restart</button>
+	<div class="game clearfix">
+		<div class="col13">
+			<img src="Images/Logo.png" class="verticallogo">
+		</div>
+		<div class="col13 center">
+			<canvas width="500" height="800" id="myCanvas" onclick="run();"></canvas>
+		</div>
+		<div class="col13">
+			<div class="verticallogo">
+				<p class=" desc">Click on the screen to start game!</p>
+				<p class=" stats">Score: <span id="score">0</span></p>
+				<p class=" stats">Health: <span id="lives">3</span></p>
+				<p class=" stats">Timer: <span id="timer">0</span></p>
+				<br>
+				<button class="restartbtn" onclick="restart();">Restart</button>
+			</div>
+		</div>
 	</div>
 
 	<script src="script.js"></script>
 
 	<div class="footer clearfix">
-			<div class="col">
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis necessitatibus qui suscipit provident
-				reiciendis accusamus natus aliquid? Quo commodi quae cumque consequuntur, iste nesciunt nulla sit
-				adipisci possimus, voluptates error.
-			</div>
-			<div class="col">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas facere quae ipsam, dolore qui
-				praesentium in reprehenderit enim quod ex corporis at fuga porro eius inventore vero neque. Quod,
-				dignissimos.
-			</div>
+		<div class="col">
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis necessitatibus qui suscipit provident
+			reiciendis accusamus natus aliquid? Quo commodi quae cumque consequuntur, iste nesciunt nulla sit
+			adipisci possimus, voluptates error.
+		</div>
+		<div class="col">
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas facere quae ipsam, dolore qui
+			praesentium in reprehenderit enim quod ex corporis at fuga porro eius inventore vero neque. Quod,
+			dignissimos.
+		</div>
 	</div>
 </body>
 
