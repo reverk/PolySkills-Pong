@@ -4,18 +4,28 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 
+// Paddle & Ball image import
+var ball = document.createElement("img");
+ball.src = "Images/Ball.png";
+
+var paddleImg = document.createElement("img");
+paddleImg.src = "Images/Paddle.png";
+
 // Dimentions of Ball
-var ballRadius = 10;
+var ballSize = 25;
+
+// Dimentions of paddle
+var paddleHeight = 10;
+var paddleWidth = 100;
+
 // Initial ball position
 var x = canvas.width / 2;
 var y = canvas.height - 30;
+
 // Initial ball direction
 var dx = 5;
 var dy = -5;
 
-// Dimentions of paddle
-var paddleHeight = 10;
-var paddleWidth = 75;
 // Initial paddle position
 var paddleX = (canvas.width - paddleWidth) / 2;
 
@@ -41,45 +51,24 @@ function mouseMoveHandler(e) {
   }
 }
 
-// Ball dimentions
+// Creates a ball
 function drawBall() {
   ctx.beginPath();
-  ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-  ctx.fillStyle = "#0095DD";
-  ctx.fill();
+  ctx.drawImage(ball, x, y);
   ctx.closePath();
 }
 
-// Paddle dimentions
+// Creates a paddle
 function drawPaddle() {
   ctx.beginPath();
-  ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = "#0095DD";
-  ctx.fill();
+  ctx.drawImage(paddleImg, paddleX, canvas.height - 15);
   ctx.closePath();
 }
 
-// Stats
-// Timeer
-function drawTime() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Time: " + time, 100, 20);
-}
-
-// Score
-function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: " + score, 8, 20);
-}
-
-// Lives
-function drawLives() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
-}
+// User stats (static)
+document.getElementById("score").innerHTML = score;
+document.getElementById("lives").innerHTML = lives;
+document.getElementById("timer").innerHTML = time;
 
 // Restart -- used for restart button
 function restart() {
@@ -91,18 +80,18 @@ function restart() {
 // Checks for border hits, including the paddle
 function collisionDetection() {
   // Checks for left & right border respectively
-  if (x + dx > canvas.width - ballRadius - WallWidth || x + dx < ballRadius + WallWidth) {
+  if (x + dx > canvas.width - ballSize - WallWidth || x + dx < WallWidth) {
     dx = -dx;
     audio.play();
   }
 
   // Checks for top border
-  if (y + dy < ballRadius + WallWidth) {
+  if (y + dy < WallWidth) {
     dy = -dy;
     audio.play();
   } 
   // Checks for bottom border
-  else if (y + dy > canvas.height - ballRadius) {
+  else if (y + dy > canvas.height - ballSize) {
     // If it hits the paddle:
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
@@ -134,14 +123,17 @@ function collisionDetection() {
 
 // The main function to run the game
 function draw() {
+  
   // IMPORTANT: Clears previous 'drawing'
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+  
   drawBall();
   drawPaddle();
-  drawScore();
-  drawLives();
-  drawTime();
+  
+  document.getElementById("score").innerHTML = score;
+  document.getElementById("lives").innerHTML = lives;
+  document.getElementById("timer").innerHTML = time;
+  
   collisionDetection();
 
   // Ball movement
@@ -151,7 +143,7 @@ function draw() {
 
 // Runs when user clicks on it
 function run() {
-  var interval = setInterval(draw, 20);
+  var interval = setInterval(draw, 16);
 
   // Timer +1 seconds
   var timer = setInterval(function() { time++; }, 1000);
