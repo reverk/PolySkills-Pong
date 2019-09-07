@@ -1,28 +1,39 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Pong Game</title>
-
-	<link href="style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<div class="game clearfix">
 		<div class="col13">
-			<img src="Images/Logo.png" class="verticallogo">
+			<img src="Images/Logo.png" class="verticallogo" alt="Game Logo">
 		</div>
+		
 		<div class="col13 center">
 			<canvas width="500" height="800" id="myCanvas" onclick="run();"></canvas>
 		</div>
 		<div class="col13">
-			<div class="verticallogo">
+			<div class="verticalstats">
 				<p class=" desc">Click on the screen to start game!</p>
-				<p class=" stats">Score: <span id="score">0</span></p>
-				<p class=" stats">Health: <span id="lives">3</span></p>
-				<p class=" stats">Timer: <span id="timer">0</span></p>
-				<br>
+				<p class=" stats">
+					<img src="Images/Icons/Coin_Icon.png" alt="Coin Icon">
+					Score: <span id="score"></span>
+				</p>
+				<p class=" stats">
+					<img src="Images/Icons/Health_Icon.png" alt="Health Icon">
+					Health: <span id="lives"></span>
+				</p>
+				<p class=" stats">
+					<img src="Images/Icons/Clock_Icon.png" alt="Timer Icon">
+					Timer: <span id="timer"></span>
+				</p>
+				
 				<button class="restartbtn" onclick="restart();">Restart</button>
 			</div>
 		</div>
