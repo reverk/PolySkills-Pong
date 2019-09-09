@@ -66,9 +66,9 @@ function drawPaddle() {
 }
 
 // User stats (static)
-document.getElementById("score").innerHTML = score;
-document.getElementById("lives").innerHTML = lives;
-document.getElementById("timer").innerHTML = time;
+  document.getElementById("score").innerHTML = score;
+  document.getElementById("lives").innerHTML = lives;
+  document.getElementById("timer").innerHTML = time;
 
 // Restart -- used for restart button
 function restart() {

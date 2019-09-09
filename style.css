@@ -110,4 +110,9 @@ canvas {
 	.verticallogo, .verticalstats {
 		top: 0px;
 	}
+
+	.startBtn {
+		top: 476px;
+		left: 430px;
+	}
 }
