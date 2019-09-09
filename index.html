@@ -11,16 +11,16 @@
 
 <body>
 	<div class="game clearfix">
-		<div class="col13">
+		<div class="cols">
 			<img src="Images/Logo.png" class="verticallogo" alt="Game Logo">
 		</div>
-		
-		<div class="col13 center">
-			<canvas width="500" height="800" id="myCanvas" onclick="run();"></canvas>
+
+		<div class="cols center">
+			<button class="startBtn" id="startBtn" onclick="run();">Start Game</button>
+			<canvas width="500" height="800" id="myCanvas"></canvas>
 		</div>
-		<div class="col13">
+		<div class="cols">
 			<div class="verticalstats">
-				<p class=" desc">Click on the screen to start game!</p>
 				<p class=" stats">
 					<img src="Images/Icons/Coin_Icon.png" alt="Coin Icon">
 					Score: <span id="score"></span>
@@ -33,31 +33,14 @@
 					<img src="Images/Icons/Clock_Icon.png" alt="Timer Icon">
 					Timer: <span id="timer"></span> s
 				</p>
-				
+
 				<button class="restartbtn" onclick="restart();">Restart</button>
-				
-				<!-- Temporary Code Placement -->
-				<!-- <button class="restartbtn" onclick="restart();">Restart</button>
-				<button class="restartbtn" onclick="goLeft();">Left</button>
-				<button class="restartbtn" onclick="goRight();">Right</button> -->
 			</div>
 		</div>
 	</div>
 
 	<script src="script.js"></script>
 
-	<div class="footer clearfix">
-		<div class="col">
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis necessitatibus qui suscipit provident
-			reiciendis accusamus natus aliquid? Quo commodi quae cumque consequuntur, iste nesciunt nulla sit
-			adipisci possimus, voluptates error.
-		</div>
-		<div class="col">
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas facere quae ipsam, dolore qui
-			praesentium in reprehenderit enim quod ex corporis at fuga porro eius inventore vero neque. Quod,
-			dignissimos.
-		</div>
-	</div>
 </body>
 
 </html>

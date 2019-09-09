@@ -143,25 +143,11 @@ function draw() {
 
 // Runs when user clicks on it
 function run() {
-  var interval = setInterval(draw, 16);
+  // Hides the button until it restarts
+  document.getElementById("startBtn").style.display = 'none';
 
+  var interval = setInterval(draw, 30);
+  
   // Timer +1 seconds
   var timer = setInterval(function() { time++; }, 1000);
 }
-
-// Temporary Code Placement
-// function goRight() {
-//   paddleX += 25;
-
-//   if (paddleX + paddleWidth > canvas.width) {
-//     paddleX = canvas.width - paddleWidth;
-//   }
-// }
-
-// function goLeft() {
-//   paddleX -= 25;
-
-//   if (paddleX < 0) {
-//     paddleX = 0;
-//   }
-// }
