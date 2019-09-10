@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Pong Game</title>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pong Game - Victor Ng</title>
+
+    <!-- CSS Linking -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-	<div class="game clearfix">
-		<div class="cols">
-			<img src="Images/Logo.png" class="verticallogo" alt="Game Logo">
-		</div>
+    <!-- The entire game's container -->
+    <div class="game clearfix">
 
-		<div class="cols center">
-			<button class="startBtn" id="startBtn" onclick="run();">Start Game</button>
-			<canvas width="500" height="800" id="myCanvas"></canvas>
-		</div>
-		<div class="cols">
-			<div class="verticalstats">
-				<p class=" stats">
-					<img src="Images/Icons/Coin_Icon.png" alt="Coin Icon">
-					Score: <span id="score"></span>
-				</p>
-				<p class=" stats">
-					<img src="Images/Icons/Health_Icon.png" alt="Health Icon">
-					Health: <span id="lives"></span>
-				</p>
-				<p class=" stats">
-					<img src="Images/Icons/Clock_Icon.png" alt="Timer Icon">
-					Timer: <span id="timer"></span> s
-				</p>
+        <!-- Left Column - Logo -->
+        <div class="col logoPos">
+            <img src="Images/Main_Logo.png" alt="Main_Logo">
+        </div>
 
-				<button class="restartbtn" onclick="restart();">Restart</button>
-			</div>
-		</div>
-	</div>
+        <!-- Center Column - The Game -->
+        <div class="col extend responsive Left">
 
-	<script src="script.js"></script>
+            <!-- Start button -->
+            <button class="startButton" id="startButton" onclick="run();">Start Game</button>
 
+            <!-- Game content -->
+            <canvas width="496" height="800" id="myCanvas"></canvas>
+        </div>
+
+        <!-- Right Column - User Stats -->
+        <div class="col responsive">
+
+            <!-- User stats container -->
+            <div class="stats">
+
+                <!-- Score description -->
+                <p class="desc">
+                    <img src="Images/Icons/Coin_Icon.png" alt="Coin_Icon"> Score: <span id="score"></span>
+                </p>
+
+                <!-- Health description -->
+                <p class="desc">
+                    <img src="Images/Icons/Health_Icon.png" alt="Health_Icon"> Health: <span id="health"></span>
+                </p>
+
+                <!-- Timer description -->
+                <p class="desc">
+                    <img src="Images/Icons/Clock_Icon.png" alt="Clock_Icon"> Time: <span id="time"></span> s
+                </p>
+
+                <!-- Restart button -->
+                <button class="restartBtn" onclick="restart();">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Linking -->
+    <script src="script.js"></script>
 </body>
-
 </html>
