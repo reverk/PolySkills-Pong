@@ -52,6 +52,18 @@ body {
     left: 620px;
 }
 
+#countdown {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+
+    display: none;
+
+    position: absolute;
+    top: 391px;
+    left: 652px;
+}
+
 /* Canvas configs */
 canvas {
     background: url(Images/The_Game.png);

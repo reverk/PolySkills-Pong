@@ -30,6 +30,11 @@ var y =  canvas.height - 45;
 var dx = 5;
 var dy = -5;
 
+// Countdown timer
+var count = 3;
+// Countdown function (globally declared)
+var counter;
+
 // Initial paddle position
 var paddleX = ((canvas.width - paddleWidth) / 2)
 
@@ -130,9 +135,32 @@ function draw() {
     x += dx;
 }
 
+// Timer before the game starts
+function countdownTimer() {
+    document.getElementById("countdown").style.display = "block";
+
+    document.getElementById("countdown").innerHTML = count;
+
+    count--;
+
+    if (count == -1) {
+        clearInterval(counter);
+
+        document.getElementById("countdown").style.display = "none";
+
+        startGame();
+    }    
+}
+
+// Starts the game by hiding the button, then starts counting down
 function run() {
     document.getElementById("startButton").style.display = "none";
 
+    counter = setInterval(countdownTimer, 1000);
+
+}
+
+function startGame () {
     var startGame = setInterval(draw, 30);
 
     var clock = setInterval(function() { time++ }, 1000);
