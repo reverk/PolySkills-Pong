@@ -1,118 +1,176 @@
+/* Clears 'floating' contents */
 .clearfix::after {
-	content: "";
-	display: table;
-	clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
+/* Setting for background colors only */
 body {
-	background-color: lightblue;
+    background-color: skyblue;
 }
 
-canvas {
-	background: url(Images/Map.png);
-	background-size: cover;
-}
-
+/* Container configs */
 .game {
-	background: url(Images/Background.png);
-	background-size: cover;
+    background: url(Images/Background.png);
+    background-size: cover;
     width: 100%;
-    padding-top: 10px;
-	padding-bottom: 10px;
-	
-	border-radius: 3px;
+    border-radius: 3px;
 }
 
+/* Configs for 3 columns */
+.col {
+    box-sizing: border-box;
+    float: left;
+    width: 30%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    text-align: center;
+    display: table;
+    margin: auto;
+}
+
+/* Part of column: Extends the middle column */
+.extend {
+    width: 40%;
+}
+
+/* Start button configs */
+.startButton {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    background-color: transparent;
+    border: 3px solid black;
+    border-radius: 100px;
+    cursor: pointer;
+
+    position: absolute;
+    top: 400px;
+    left: 620px;
+}
+
+#countdown {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+
+    display: none;
+
+    position: absolute;
+    top: 391px;
+    left: 652px;
+}
+
+/* Canvas configs */
+canvas {
+    background: url(Images/The_Game.png);
+    background-size: cover;
+}
+
+/* Player stats config */
 .stats {
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-weight: bold;
-	font-size: 45px;
-	text-align: left;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 50px;
+
+    position: relative;
+    top: 100px;
 }
 
-.stats img {
-	vertical-align: middle;
+/* Expands spacing between each line (see .stats) */
+.desc {
+    margin-bottom: 10px;
 }
 
-.stats span {
-	font-family: inherit;
-	font-weight: inherit;
-	font-size: inherit;
+/* Aligns images in middle */
+.desc img {
+    vertical-align: middle;
 }
 
-.startBtn {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 25px;
-	font-weight: bold;
-	background-color: transparent;
-	border-radius: 100px;
-	border: 3px solid black;
-	padding: 10px;
-
-	position: absolute;
-	top: 392px;
-	left: 600px;
+/* Restart button config */
+.restartBtn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 100px;
+    border: none;
+    background-color: limegreen;
+    cursor: pointer;
 }
 
-.startBtn:hover {
-	cursor: pointer;
+/* Repositions */
+.logoPos {
+    position: relative;
+    top: 255px;
 }
 
-.restartbtn {
-	text-align: center;
-	padding: 20px;
-	border-radius: 100px;
-	background-color: #a2ffa7;
-	border: none;
-	cursor: pointer;
-}
-
-.cols {
-	box-sizing: border-box;
-	width: 30%;
-	padding: 5px;
-	float: left;
-	text-align: center;
-	margin: 0 auto;
-	display: table;
-}
-
-.center {
-	width: 40%;
-}
-
-.verticallogo {
-	margin: auto;
-	display: table;
-	text-align: center;
-	position: relative;
-	top: 260px;
-}
-
-.verticalstats {
-	margin: auto;
-	display: table;
-	text-align: center;
-	position: relative;
-	top: 196px;
-}
-
-.footer {
-	background-color: white;
-	padding: 10px;
-}
-
+/* Tablet config changes */
 @media screen and (max-width: 1024px) {
-	.cols {
-		width: 100%;
-	}
+    /* Changes background image */
+    .game {
+        background: url(Images/Background_Tablet.png);
+    }
 
-	.verticallogo, .verticalstats {
-		top: 0px;
-	}
+    /* Columns becomes a line */
+    .col {
+        width: 100%;
+    }
 
-	.startBtn {
-		top: 476px;
-		left: 430px;
-	}
+    /* Repositions logo */
+    .logoPos {
+        position: absolute;
+        top: 100px;
+        left: 312px;
+    }
+
+    /* Repositions stats board */
+    .stats {
+        top: 300px;
+    }
+
+    canvas {
+        margin-left: 100px;        
+    }
+
+    /* Repositions start button */
+    .startButton {
+        top: 333px;
+        left: 353px;
+    }
+    
+    /* Adjusts font size for restart button */
+    .restartBtn {
+        font-size: 17px;
+        margin-left: -100px;
+    }
+
+    /* Resizes Images & icons (below */
+    .logoPos img {
+        width: 13%;
+    }
+    
+    .desc img {
+        width: 20%;
+    }
+
+    /* User stats adjustments */
+    .desc {
+        text-align: left;
+        font-size: 25px;
+    }
+    
+    /* Reworked UI on tablets */
+    .responsive {
+        box-sizing: border-box;
+        width: 25%;
+        padding: 5px;
+    }
+
+    /* Makes the game column larger */
+    .Left {
+        width: 75%;
+    }
+
 }
